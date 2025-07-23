@@ -1,0 +1,56 @@
+<?php
+// car_actions.php - Handles car actions via AJAX
+include 'db.php';
+session_start();
+
+$action = $_POST['action'] ?? '';
+$response = ['success' => false];
+
+switch ($action) {
+    case 'get_details':
+        // Fetch car details by ID
+        $id = intval($_POST['car_id']);
+        $result = $conn->query("SELECT * FROM cars WHERE id = $id");
+        if ($car = $result->fetch_assoc()) {
+            $response['success'] = true;
+            $response['car'] = $car;
+        }
+        break;
+    case 'rent':
+        // Rent a car
+        if (isset($_SESSION['username']) && $_SESSION['usertype'] === 'client') {
+            $id = intval($_POST['car_id']);
+            $username = $_SESSION['username'];
+            $conn->query("UPDATE cars SET status = 'rented', rented_by = '$username', rent_start = NOW() WHERE id = $id AND status = 'available'");
+            $response['success'] = true;
+        }
+        break;
+    case 'release':
+        // Release a car
+        if (isset($_SESSION['username']) && $_SESSION['usertype'] === 'client') {
+            $id = intval($_POST['car_id']);
+            $username = $_SESSION['username'];
+            $conn->query("UPDATE cars SET status = 'available', rented_by = NULL, rent_end = NOW() WHERE id = $id AND rented_by = '$username' AND status = 'rented'");
+            $response['success'] = true;
+        }
+        break;
+    case 'remove':
+        // Remove a car (admin only, if not rented)
+        if (isset($_SESSION['username']) && $_SESSION['usertype'] === 'admin') {
+            $id = intval($_POST['car_id']);
+            $conn->query("UPDATE cars SET status = 'removed' WHERE id = $id AND status = 'available'");
+            $response['success'] = true;
+        }
+        break;
+    case 'add':
+        // Add a new car (admin only)
+        if (isset($_SESSION['username']) && $_SESSION['usertype'] === 'admin') {
+            // Handle file upload and insert new car
+            // (To be implemented in detail)
+        }
+        break;
+}
+
+header('Content-Type: application/json');
+echo json_encode($response);
+?> 

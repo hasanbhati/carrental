@@ -1,0 +1,203 @@
+/* Main stylesheet for Car Rental Project */
+
+body {
+    background: #f0f4f8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    background: #fff;
+    max-width: 350px;
+    margin: 60px auto;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.login-container h2 {
+    text-align: center;
+    color: #2a7ae2;
+}
+.login-container label {
+    display: block;
+    margin-top: 15px;
+    color: #333;
+}
+.login-container input, .login-container select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.login-container button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background: #2a7ae2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.login-container button:hover {
+    background: #1761b0;
+}
+
+.dashboard-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px 30px 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.dashboard-container h2 {
+    color: #2a7ae2;
+}
+.logout-btn {
+    float: right;
+    background: #e53935;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+}
+.logout-btn:hover {
+    background: #b71c1c;
+}
+#add-car-btn {
+    background: #43a047;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+#add-car-btn:hover {
+    background: #2e7031;
+}
+
+.car-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: #fafbfc;
+}
+.car-table th, .car-table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px 8px;
+    text-align: left;
+}
+.car-table th {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+.car-row {
+    cursor: pointer;
+    background: #fff;
+    transition: background 0.2s;
+}
+.car-row:hover {
+    background: #e3f2fd;
+}
+.car-details-row td {
+    background: #f1f8e9;
+    padding: 18px 8px;
+}
+.car-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+.car-photo {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #b0bec5;
+}
+.car-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.car-details li {
+    margin-bottom: 6px;
+    color: #333;
+}
+.rent-btn, .release-btn, .remove-btn {
+    background: #2a7ae2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+.rent-btn:hover {
+    background: #1761b0;
+}
+.release-btn {
+    background: #fbc02d;
+    color: #333;
+}
+.release-btn:hover {
+    background: #f9a825;
+}
+.remove-btn {
+    background: #e53935;
+}
+.remove-btn:hover {
+    background: #b71c1c;
+}
+.add-car-form {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+.add-car-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+.add-car-form input[type="text"],
+.add-car-form input[type="number"],
+.add-car-form input[type="file"],
+.add-car-form textarea {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+.add-car-form button[type="submit"] {
+    background: #2a7ae2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.add-car-form button[type="submit"]:hover {
+    background: #1761b0;
+} 
