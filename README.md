@@ -13,37 +13,55 @@ A simple car rental website using HTML, CSS, JavaScript, PHP, and MySQL. Designe
 - `sql/` – SQL scripts for database setup
 
 ## XAMPP Setup Instructions
-(Instructions will be added after project files are created) 
 
-## How to Launch the Project on XAMPP
+Follow these steps to set up and run the Car Rental project locally using XAMPP:
 
-1. **Install XAMPP**
-   - Download and install XAMPP from https://www.apachefriends.org/
+### 1. Install XAMPP
+- Download XAMPP from [https://www.apachefriends.org/](https://www.apachefriends.org/)
+- Install it on your computer (Windows, Mac, or Linux)
 
-2. **Start Apache and MySQL**
-   - Open the XAMPP Control Panel
-   - Start the Apache and MySQL modules
+### 2. Start Apache and MySQL
+- Open the XAMPP Control Panel
+- Click **Start** next to **Apache** and **MySQL**
 
-3. **Set Up the Database**
-   - Open phpMyAdmin (usually at http://localhost/phpmyadmin)
-   - Click on the "Import" tab
-   - Import the `sql/init_cars.sql` file to create the `car_rental` database and populate it with sample data
+### 3. Set Up the Database
+- Open your browser and go to [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
+- Click the **Import** tab at the top
+- Click **Choose File** and select the `sql/init_cars.sql` file from your project folder
+- Click **Go** to import. This will create the `car_rental` database and fill it with sample car data
 
-4. **Place Project Files**
-   - Copy the entire project folder into the `htdocs` directory inside your XAMPP installation (e.g., `C:/xampp/htdocs/CarRental`)
-   - Make sure the folder structure is preserved
+### 4. Place Project Files in XAMPP’s Web Directory
+- Find your XAMPP installation directory (e.g., `C:/xampp` on Windows or `/Applications/XAMPP` on Mac)
+- Open the `htdocs` folder inside XAMPP
+- Copy your entire project folder (e.g., `CarRental`) into the `htdocs` folder
+- Make sure the folder structure is preserved
 
-5. **Add Car Images**
-   - Place car images (e.g., `c5x.jpg`, `corolla.jpg`, etc.) in the `images/` folder. You can use your own images or download free car images online. The image filenames should match those in the database or as uploaded by the admin.
+### 5. Add Car Images
+- Inside your project’s `images/` folder, add the car images referenced in the database (e.g., `c5x.jpg`, `corolla.jpg`, etc.)
+- You can use your own images or download free car images online. Make sure the filenames match those in the database
 
-6. **Access the Website**
-   - In your browser, go to `http://localhost/CarRental/index.html`
-   - Login as a client (username: `client1`, password: `clientpass`) or as an admin (username: `admin1`, password: `adminpass`)
+### 6. Check Folder Permissions (for Image Uploads)
+- Make sure the `images/` folder is writable. On Windows, this is usually fine. On Mac/Linux, you may need to right-click the folder and set permissions to allow read/write
 
-7. **Usage**
-   - Clients can rent, release, and view cars.
-   - Admins can add, remove, and view cars, and see who rented each car.
+### 7. Access the Website
+- In your browser, go to: [http://localhost/CarRental/index.html](http://localhost/CarRental/index.html)
+- You should see the login page
+
+### 8. Login and Test
+- **Client login:**
+  - Username: `client1`
+  - Password: `clientpass`
+- **Admin login:**
+  - Username: `admin1`
+  - Password: `adminpass`
+- Try renting, releasing, adding, and removing cars to see all features in action
 
 ---
 
-If you have any issues, make sure file permissions allow uploads to the `images/` folder and that your XAMPP services are running. 
+## How to Use
+- **Clients** can rent, release, and view cars
+- **Admins** can add, remove, and view cars, and see who rented each car
+
+---
+
+If you have any issues, make sure file permissions allow uploads to the `images/` folder and that your XAMPP services are running. If you need help, open an issue or contact the project maintainer. 
