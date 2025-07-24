@@ -1,7 +1,5 @@
 # Car Rental Project
 
-A simple car rental website using HTML, CSS, JavaScript, PHP, and MySQL. Designed for beginners and ready to run on XAMPP.
-
 ## Project Structure
 - `index.html` – Login page
 - `client_dashboard.php` – Client dashboard
@@ -36,18 +34,11 @@ Follow these steps to set up and run the Car Rental project locally using XAMPP:
 - Copy your entire project folder (e.g., `CarRental`) into the `htdocs` folder
 - Make sure the folder structure is preserved
 
-### 5. Add Car Images
-- Inside your project’s `images/` folder, add the car images referenced in the database (e.g., `c5x.jpg`, `corolla.jpg`, etc.)
-- You can use your own images or download free car images online. Make sure the filenames match those in the database
-
-### 6. Check Folder Permissions (for Image Uploads)
-- Make sure the `images/` folder is writable. On Windows, this is usually fine. On Mac/Linux, you may need to right-click the folder and set permissions to allow read/write
-
-### 7. Access the Website
+### 5. Access the Website
 - In your browser, go to: [http://localhost/CarRental/index.html](http://localhost/CarRental/index.html)
 - You should see the login page
 
-### 8. Login and Test
+### 6. Login and Test
 - **Client login:**
   - Username: `client1`
   - Password: `clientpass`
