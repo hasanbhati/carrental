@@ -1,132 +1,173 @@
-/* Main stylesheet for Car Rental Project */
+/* Modern Car Rental Website Redesign */
 
 body {
-    background: #f0f4f8;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
 .login-container {
     background: #fff;
-    max-width: 350px;
-    margin: 60px auto;
-    padding: 30px 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 40px 32px 32px 32px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.12);
+    border: 1px solid #e3eafc;
 }
 .login-container h2 {
     text-align: center;
-    color: #2a7ae2;
+    color: #1a237e;
+    font-size: 2rem;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
 }
 .login-container label {
     display: block;
-    margin-top: 15px;
-    color: #333;
+    margin-top: 18px;
+    color: #263238;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 .login-container input, .login-container select {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #b0bec5;
-    border-radius: 5px;
+    padding: 10px;
+    margin-top: 7px;
+    border: 1.5px solid #b0bec5;
+    border-radius: 7px;
     box-sizing: border-box;
+    font-size: 1rem;
+    background: #f7fafd;
+    transition: border 0.2s;
+}
+.login-container input:focus, .login-container select:focus {
+    border: 1.5px solid #1a237e;
+    outline: none;
 }
 .login-container button {
     width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    background: #2a7ae2;
+    margin-top: 28px;
+    padding: 12px;
+    background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
     color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08);
+    transition: background 0.2s, box-shadow 0.2s;
 }
 .login-container button:hover {
-    background: #1761b0;
+    background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+    box-shadow: 0 4px 16px rgba(33, 150, 243, 0.13);
 }
 
 .dashboard-container {
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 1100px;
+    margin: 48px auto 48px auto;
     background: #fff;
-    padding: 30px 30px 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 40px 40px 48px 40px;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.10);
+    border: 1px solid #e3eafc;
 }
 .dashboard-container h2 {
-    color: #2a7ae2;
+    color: #1a237e;
+    font-size: 2.1rem;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
 }
 .logout-btn {
     float: right;
-    background: #e53935;
+    background: linear-gradient(90deg, #e53935 0%, #ff7043 100%);
     color: #fff;
-    padding: 8px 16px;
+    padding: 10px 22px;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     text-decoration: none;
-    margin-top: -40px;
-    margin-bottom: 20px;
-    transition: background 0.2s;
+    margin-top: -48px;
+    margin-bottom: 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(229, 57, 53, 0.08);
+    transition: background 0.2s, box-shadow 0.2s;
 }
 .logout-btn:hover {
-    background: #b71c1c;
+    background: linear-gradient(90deg, #b71c1c 0%, #e53935 100%);
+    box-shadow: 0 4px 16px rgba(229, 57, 53, 0.13);
 }
 #add-car-btn {
-    background: #43a047;
+    background: linear-gradient(90deg, #43a047 0%, #66bb6a 100%);
     color: #fff;
-    padding: 8px 16px;
+    padding: 10px 22px;
     border: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    border-radius: 7px;
+    margin-bottom: 24px;
     cursor: pointer;
-    font-size: 15px;
-    transition: background 0.2s;
+    font-size: 1.05rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(67, 160, 71, 0.08);
+    transition: background 0.2s, box-shadow 0.2s;
 }
 #add-car-btn:hover {
-    background: #2e7031;
+    background: linear-gradient(90deg, #2e7031 0%, #43a047 100%);
+    box-shadow: 0 4px 16px rgba(67, 160, 71, 0.13);
 }
 
 .car-table {
     width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-    background: #fafbfc;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin-bottom: 36px;
+    background: transparent;
 }
 .car-table th, .car-table td {
-    border: 1px solid #e0e0e0;
-    padding: 10px 8px;
+    border: none;
+    padding: 16px 12px;
     text-align: left;
+    font-size: 1.05rem;
 }
 .car-table th {
     background: #e3f2fd;
-    color: #1565c0;
+    color: #1976d2;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(33, 150, 243, 0.04);
 }
 .car-row {
     cursor: pointer;
     background: #fff;
-    transition: background 0.2s;
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+    transition: background 0.2s, box-shadow 0.2s;
 }
 .car-row:hover {
     background: #e3f2fd;
+    box-shadow: 0 4px 18px rgba(33, 150, 243, 0.10);
 }
 .car-details-row td {
     background: #f1f8e9;
-    padding: 18px 8px;
+    padding: 24px 16px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(67, 160, 71, 0.07);
 }
 .car-details {
     display: flex;
     align-items: flex-start;
-    gap: 24px;
+    gap: 32px;
 }
 .car-photo {
-    width: 120px;
-    height: 80px;
+    width: 140px;
+    height: 100px;
     object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #b0bec5;
+    border-radius: 10px;
+    border: 2px solid #b0bec5;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    background: #fff;
 }
 .car-details ul {
     list-style: none;
@@ -134,70 +175,107 @@ body {
     margin: 0;
 }
 .car-details li {
-    margin-bottom: 6px;
-    color: #333;
+    margin-bottom: 10px;
+    color: #263238;
+    font-size: 1.05rem;
 }
 .rent-btn, .release-btn, .remove-btn {
-    background: #2a7ae2;
+    background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 6px 14px;
+    border-radius: 7px;
+    padding: 8px 20px;
     cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08);
+    transition: background 0.2s, box-shadow 0.2s;
 }
 .rent-btn:hover {
-    background: #1761b0;
+    background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+    box-shadow: 0 4px 16px rgba(33, 150, 243, 0.13);
 }
 .release-btn {
-    background: #fbc02d;
+    background: linear-gradient(90deg, #fbc02d 0%, #fff176 100%);
     color: #333;
 }
 .release-btn:hover {
-    background: #f9a825;
+    background: linear-gradient(90deg, #f9a825 0%, #fbc02d 100%);
+    box-shadow: 0 4px 16px rgba(251, 192, 45, 0.13);
 }
 .remove-btn {
-    background: #e53935;
+    background: linear-gradient(90deg, #e53935 0%, #ff7043 100%);
 }
 .remove-btn:hover {
-    background: #b71c1c;
+    background: linear-gradient(90deg, #b71c1c 0%, #e53935 100%);
+    box-shadow: 0 4px 16px rgba(229, 57, 53, 0.13);
 }
 .add-car-form {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-    margin-bottom: 20px;
-    max-width: 500px;
+    background: #f7fafd;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.07);
+    margin-bottom: 28px;
+    max-width: 540px;
+    border: 1px solid #e3eafc;
 }
 .add-car-form label {
     display: block;
-    margin-bottom: 10px;
-    color: #333;
+    margin-bottom: 14px;
+    color: #263238;
+    font-weight: 500;
 }
 .add-car-form input[type="text"],
 .add-car-form input[type="number"],
 .add-car-form input[type="file"],
 .add-car-form textarea {
     width: 100%;
-    padding: 7px;
-    border: 1px solid #b0bec5;
-    border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 12px;
+    padding: 10px;
+    border: 1.5px solid #b0bec5;
+    border-radius: 7px;
+    margin-top: 5px;
+    margin-bottom: 16px;
     box-sizing: border-box;
+    font-size: 1rem;
+    background: #fff;
+    transition: border 0.2s;
+}
+.add-car-form input:focus,
+.add-car-form textarea:focus {
+    border: 1.5px solid #1976d2;
+    outline: none;
 }
 .add-car-form button[type="submit"] {
-    background: #2a7ae2;
+    background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
     color: #fff;
     border: none;
-    border-radius: 5px;
-    padding: 8px 18px;
-    font-size: 15px;
+    border-radius: 7px;
+    padding: 10px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, box-shadow 0.2s;
 }
 .add-car-form button[type="submit"]:hover {
-    background: #1761b0;
+    background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+    box-shadow: 0 4px 16px rgba(33, 150, 243, 0.13);
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .dashboard-container {
+        padding: 18px 4vw 24px 4vw;
+    }
+    .car-details {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .car-photo {
+        width: 100%;
+        height: 140px;
+    }
+    .add-car-form {
+        padding: 14px;
+        max-width: 100%;
+    }
 } 

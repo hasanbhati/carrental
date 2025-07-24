@@ -1,3 +1,8 @@
+-- delete database if exists
+DROP TABLE IF EXISTS rental_history;
+DROP TABLE IF EXISTS cars;
+DROP DATABASE IF EXISTS car_rental;
+
 -- SQL script to create and populate the cars table
 
 CREATE DATABASE IF NOT EXISTS car_rental;
@@ -19,6 +24,14 @@ CREATE TABLE IF NOT EXISTS cars (
     rented_by VARCHAR(50) DEFAULT NULL,
     rent_start DATETIME DEFAULT NULL,
     rent_end DATETIME DEFAULT NULL
+);
+CREATE TABLE IF NOT EXISTS rental_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    car_id INT NOT NULL,
+    username VARCHAR(50) NOT NULL,
+    action ENUM('rent', 'release') NOT NULL,
+    action_time DATETIME NOT NULL,
+    FOREIGN KEY (car_id) REFERENCES cars(id)
 );
 
 INSERT INTO cars (manufacturer, brand, model, registration_plate, type, fuel_type, transmission, mileage, image, info, status)

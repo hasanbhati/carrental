@@ -22,6 +22,8 @@ switch ($action) {
             $id = intval($_POST['car_id']);
             $username = $_SESSION['username'];
             $conn->query("UPDATE cars SET status = 'rented', rented_by = '$username', rent_start = NOW() WHERE id = $id AND status = 'available'");
+            // Log to rental_history
+            $conn->query("INSERT INTO rental_history (car_id, username, action, action_time) VALUES ($id, '$username', 'rent', NOW())");
             $response['success'] = true;
         }
         break;
@@ -31,6 +33,8 @@ switch ($action) {
             $id = intval($_POST['car_id']);
             $username = $_SESSION['username'];
             $conn->query("UPDATE cars SET status = 'available', rented_by = NULL, rent_end = NOW() WHERE id = $id AND rented_by = '$username' AND status = 'rented'");
+            // Log to rental_history
+            $conn->query("INSERT INTO rental_history (car_id, username, action, action_time) VALUES ($id, '$username', 'release', NOW())");
             $response['success'] = true;
         }
         break;

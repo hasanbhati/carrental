@@ -10,7 +10,8 @@ $username = $_SESSION['username'];
 // Fetch cars from DB
 $available = $conn->query("SELECT * FROM cars WHERE status = 'available'");
 $rented = $conn->query("SELECT * FROM cars WHERE status = 'rented' AND rented_by = '$username'");
-$history = $conn->query("SELECT * FROM cars WHERE status = 'removed' AND rented_by = '$username'");
+// Fetch rental history from rental_history table
+$history = $conn->query("SELECT h.*, c.brand, c.model, c.type FROM rental_history h JOIN cars c ON h.car_id = c.id WHERE h.username = '$username' ORDER BY h.action_time DESC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,17 +67,19 @@ $history = $conn->query("SELECT * FROM cars WHERE status = 'removed' AND rented_
         <table class="car-table" id="history-cars">
             <thead>
                 <tr>
-                    <th>Brand</th><th>Model</th><th>Type</th>
+                    <th>Brand</th><th>Model</th><th>Type</th><th>Action</th><th>Date/Time</th>
                 </tr>
             </thead>
             <tbody>
-                <?php while($car = $history->fetch_assoc()): ?>
-                <tr class="car-row" data-car-id="<?php echo $car['id']; ?>">
-                    <td><?php echo htmlspecialchars($car['brand']); ?></td>
-                    <td><?php echo htmlspecialchars($car['model']); ?></td>
-                    <td><?php echo htmlspecialchars($car['type']); ?></td>
+                <?php while($row = $history->fetch_assoc()): ?>
+                <tr class="car-row" data-car-id="<?php echo $row['car_id']; ?>">
+                    <td><?php echo htmlspecialchars($row['brand']); ?></td>
+                    <td><?php echo htmlspecialchars($row['model']); ?></td>
+                    <td><?php echo htmlspecialchars($row['type']); ?></td>
+                    <td><?php echo htmlspecialchars(ucfirst($row['action'])); ?></td>
+                    <td><?php echo htmlspecialchars($row['action_time']); ?></td>
                 </tr>
-                <tr class="car-details-row" style="display:none;"><td colspan="3"></td></tr>
+                <tr class="car-details-row" style="display:none;"><td colspan="5"></td></tr>
                 <?php endwhile; ?>
             </tbody>
         </table>
